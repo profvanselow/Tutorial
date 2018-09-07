@@ -25,17 +25,17 @@ public class Main extends Application {
         primaryStage.setTitle("JavaFX Welcome");
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
-        grid.setHgap(10);
-        grid.setVgap(10);
+        grid.setHgap(5); // changed from tutorial
+        grid.setVgap(5); // changed from tutorial
         grid.setPadding(new Insets(25, 25, 25, 25));
         Button btn = new Button("Sign in");
         HBox hbBtn = new HBox(10);
         hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
         hbBtn.getChildren().add(btn);
-        grid.add(hbBtn, 1, 4);
+        grid.add(hbBtn, 1, 3); // changed row from tutorial
 
         final Text actiontar = new Text();
-        grid.add(actiontar, 1, 6);
+        grid.add(actiontar, 1, 4); // changed row from tutorial
 
         btn.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -49,7 +49,7 @@ public class Main extends Application {
         Scene scene = new Scene(grid, 300, 275);
         primaryStage.setScene(scene);
         Text scenetitle = new Text("Welcome");
-        scenetitle = new Text("different");
+        scenetitle = new Text("Welcome");
         scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         grid.add(scenetitle, 0, 0, 2, 1);
 
@@ -65,17 +65,19 @@ public class Main extends Application {
         PasswordField pwBox = new PasswordField();
         grid.add(pwBox, 1, 2);
 
-        Label userName2 = new Label("New one");
-        grid.add(userName2, 0, 3);
+//        Label userName2 = new Label("New one");
+//        grid.add(userName2, 0, 3);
+//
+//        TextField userTextField2 = new TextField();
+//        grid.add(userTextField2, 1, 3);
+//
+//        Label pw2 = new Label("Password:");
+//        grid.add(pw2, 0, 4);
+//
+//        PasswordField pwBox2 = new PasswordField();
+//        grid.add(pwBox2, 1, 4);
 
-        TextField userTextField2 = new TextField();
-        grid.add(userTextField2, 1, 3);
-
-        Label pw2 = new Label("Password:");
-        grid.add(pw2, 0, 4);
-
-        PasswordField pwBox2 = new PasswordField();
-        grid.add(pwBox2, 1, 4);
+        grid.setGridLinesVisible(true);
 
         primaryStage.show();
     }
