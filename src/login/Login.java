@@ -1,4 +1,4 @@
-package sample;
+package login;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -18,7 +18,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class Login extends Application {
 
     @Override
     public void start(Stage primaryStage) {
@@ -41,8 +41,8 @@ public class Main extends Application {
 
             @Override
             public void handle(ActionEvent e) {
-                actiontar.setFill(Color.FIREBRICK);
                 actiontar.setText("Sign in button pressed");
+              actiontar.setId("actiontarget");
             }
         });
 
@@ -50,7 +50,8 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         Text scenetitle = new Text("Welcome");
         scenetitle = new Text("Welcome");
-        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+      scenetitle.setId("welcome-text");
+
         grid.add(scenetitle, 0, 0, 2, 1);
 
         Label userName = new Label("User Name:");
@@ -65,20 +66,9 @@ public class Main extends Application {
         PasswordField pwBox = new PasswordField();
         grid.add(pwBox, 1, 2);
 
-//        Label userName2 = new Label("New one");
-//        grid.add(userName2, 0, 3);
-//
-//        TextField userTextField2 = new TextField();
-//        grid.add(userTextField2, 1, 3);
-//
-//        Label pw2 = new Label("Password:");
-//        grid.add(pw2, 0, 4);
-//
-//        PasswordField pwBox2 = new PasswordField();
-//        grid.add(pwBox2, 1, 4);
-
-        grid.setGridLinesVisible(true);
-
+       // grid.setGridLinesVisible(true);
+      scene.getStylesheets().add
+          (Login.class.getResource("Login.css").toExternalForm());
         primaryStage.show();
     }
 
